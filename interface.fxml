@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+  <children>
+    <MenuBar prefWidth="648.0" VBox.vgrow="NEVER">
+      <menus>
+        <Menu mnemonicParsing="false" text="File">
+          <items>
+            <MenuItem mnemonicParsing="false" text="New" />
+            <MenuItem mnemonicParsing="false" text="Open…" />
+            <Menu mnemonicParsing="false" text="Open Recent" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Close" />
+            <MenuItem mnemonicParsing="false" text="Save" />
+            <MenuItem mnemonicParsing="false" text="Save As…" />
+            <MenuItem mnemonicParsing="false" text="Revert" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Preferences…" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Quit" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Edit">
+          <items>
+            <MenuItem mnemonicParsing="false" text="Undo" />
+            <MenuItem mnemonicParsing="false" text="Redo" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Cut" />
+            <MenuItem mnemonicParsing="false" text="Copy" />
+            <MenuItem mnemonicParsing="false" text="Paste" />
+            <MenuItem mnemonicParsing="false" text="Delete" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Select All" />
+            <MenuItem mnemonicParsing="false" text="Unselect All" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Help">
+          <items>
+            <MenuItem mnemonicParsing="false" text="About MyHelloApp" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="493.0" prefWidth="648.0" VBox.vgrow="ALWAYS">
+      <children>
+            <GridPane layoutY="23.0" prefHeight="140.0" prefWidth="648.0" AnchorPane.rightAnchor="0.0">
+              <columnConstraints>
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints fx:id="row1" maxHeight="89.0" minHeight="0.0" prefHeight="53.0" valignment="CENTER" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="89.0" minHeight="0.0" prefHeight="53.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="107.0" minHeight="10.0" prefHeight="51.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <ComboBox id="employeeList" fx:id="dropDown" prefWidth="150.0" promptText="Employee Name" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+                     <contextMenu>
+                        <ContextMenu />
+                     </contextMenu>
+                  </ComboBox>
+                  <ImageView fx:id="employeePic" accessibleText="Employee Pic" fitHeight="80.0" fitWidth="141.0" opacity="0.67" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowSpan="2">
+                     <image>
+                        <Image url="@employee1.jpg" />
+                     </image>
+                  </ImageView>
+                  <GridPane prefHeight="45.0" prefWidth="188.0" GridPane.columnIndex="1">
+                     <columnConstraints>
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" valignment="CENTER" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Button id="retrieve" accessibleText="Retrieve Record" mnemonicParsing="false" prefHeight="25.0" prefWidth="93.0" text="Retrieve" />
+                        <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="93.0" text="Assign" GridPane.columnIndex="1">
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                        </Button>
+                     </children>
+                  </GridPane>
+                  <GridPane GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                    <columnConstraints>
+                      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="93.0" text="Cnc" />
+                        <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="93.0" text="Generate" GridPane.columnIndex="1" GridPane.valignment="CENTER" />
+                        <Button fx:id="Cancel" layoutX="45.0" layoutY="21.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="93.0" text="Cancel" />
+                     </children>
+                  </GridPane>
+               </children>
+               <padding>
+                  <Insets top="5.0" />
+               </padding>
+            </GridPane>
+            <GridPane gridLinesVisible="true" layoutX="69.0" layoutY="181.0" opacity="0.57" prefHeight="121.0" prefWidth="503.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="Assignment" />
+                  <Label text="Progress" GridPane.columnIndex="1" />
+               </children>
+            </GridPane>
+            <TextArea layoutX="68.0" layoutY="312.0" prefHeight="200.0" prefWidth="200.0" wrapText="true" />
+            <Label layoutX="68.0" layoutY="312.0" prefHeight="17.0" prefWidth="200.0" text="AssignmentList" />
+      </children>
+    </AnchorPane>
+  </children>
+</VBox>
